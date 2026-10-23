@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Analysis Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h2>Weather Analytics</h2>
+        <p>Weather Data Analysis and Forecasting</p>
+    </header>
+<section class="filters">
+    <label for="city">Search City:</label>
+    <input
+        type="text"
+        id="city"
+        placeholder="Enter a city, e.g. Mumbai"
+        value="Bengaluru"
+    >
+    <button id="searchBtn">Search Weather</button>
+    <label for="year">Year:</label>
+    <select id="year">
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+    </select>
+</section>
+<p id="status">Loading weather data...</p>
+<section class="cards">
+    <div class="card">
+        <h3>Current Temperature</h3>
+        <p id="avgTemp">-- °C</p>
+    </div>
+    <div class="card">
+        <h3>Maximum Temperature</h3>
+        <p id="maxTemp">-- °C</p>
+    </div>
+    <div class="card">
+        <h3>Minimum Temperature</h3>
+        <p id="minTemp">-- °C</p>
+    </div>
+    <div class="card">
+        <h3>Total Forecast Rainfall</h3>
+        <p id="rainfall">-- mm</p>
+    </div>
+</section>
+<!-- All four charts belong inside this section -->
+<section class="charts">
+    <div class="panel">
+        <h2>Seasonality Analysis</h2>
+        <div class="chart-container">
+            <canvas id="temperatureChart"></canvas>
+        </div>
+    </div>
+    <div class="panel">
+        <h2>Rainfall Analysis</h2>
+        <div class="chart-container">
+            <canvas id="rainfallChart"></canvas>
+        </div>
+    </div>
+    <div class="panel">
+        <h2>Yearly Trend Analysis</h2>
+        <div class="chart-container">
+            <canvas id="trendChart"></canvas>
+        </div>
+    </div>
+    <div class="panel">
+        <h2>7-Day Temperature Forecast</h2>
+        <div class="chart-container">
+            <canvas id="forecastChart"></canvas>
+        </div>
+    </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
